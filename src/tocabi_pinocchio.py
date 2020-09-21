@@ -41,16 +41,16 @@ def talker():
                         qdot[i] = qmsg.velocity[i]
                    
                   CMM = pinocchio.computeCentroidalMap(model, data, q)
-                  pinocchio.computeCoriolisMatrix(model,data,q,qdot)
-                  pinocchio.
+#                  pinocchio.computeCoriolisMatrix(model,data,q,qdot)
+                  #pinocchio.
 
                   for i in range(0, 6):
                         for j in range(0, 33):
                               modelmsg.CMM[33*(i)+j] = CMM[i][j] 
 
-                  for i in range(0, 33):
-                        for j in range(0, 33):
-                              modelmsg.COR[33*(i)+j] = data.C[i][j] 
+#                  for i in range(0, 33):
+#                        for j in range(0, 33):
+#                              modelmsg.COR[33*(i)+j] = data.C[i][j] 
 
                   pub.publish(modelmsg)
                   rate.sleep()
