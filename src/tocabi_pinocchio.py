@@ -27,7 +27,7 @@ def talker():
       modelmsg.CMM = [0 for i in range(33*6)]
       modelmsg.COR = [0 for i in range(33*33)] 
       rate = rospy.Rate(1000) #10hz
-      model = pinocchio.buildModelFromUrdf("/home/jhk/catkin_ws/src/dyros_tocabi/tocabi_description/robots/dyros_tocabi_sim.urdf")      
+      model = pinocchio.buildModelFromUrdf("/home/jhk/catkin_ws/src/dyros_tocabi/tocabi_description/robots/dyros_tocabi.urdf")      
       data = model.createData()
       global start
       q = pinocchio.randomConfiguration(model)
